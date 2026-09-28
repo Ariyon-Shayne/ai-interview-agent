@@ -63,7 +63,12 @@ FEEDBACK_PROMPT = """Based on our complete interview conversation, provide detai
 
 app = Flask(__name__)
 CORS(app, expose_headers=['X-Question-Number', 'X-Interview-Complete'])
-
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({
+        "status": "running",
+        "message": "AI Interview Agent backend is running"
+    })
 
 def get_message_content(message):
     """Safely extract string content from LangChain / LangGraph messages"""
