@@ -6,3 +6,4 @@ langgraph
 langchain-google-genai
 assemblyai
 requests
+gunicorn
