@@ -291,9 +291,13 @@ function stopRecording() {
 }
 
 
-// ========== API FUNCTIONS ==========
+// ========== API CONFIGURATION & ENDPOINTS ==========
 
-const startInterviewApiUrl = "http://127.0.0.1:5000/start-interview";
+const API_BASE_URL = "https://ai-interview-agent-kr12.onrender.com";
+
+const startInterviewApiUrl = `${API_BASE_URL}/start-interview`;
+const submitAnswerApiUrl = `${API_BASE_URL}/submit-answer`;
+const getFeedbackApiUrl = `${API_BASE_URL}/get-feedback`;
 
 
 async function startInterview() {
@@ -327,8 +331,6 @@ async function startInterview() {
         startInterviewBtn.classList.remove("hidden");
     }
 }
-
-const submitAnswerApiUrl = "http://127.0.0.1:5000/submit-answer";
 
 
 async function submitAnswer() {
@@ -400,8 +402,6 @@ async function endInterview() {
     
     await getFeedback();
 }
-
-const getFeedbackApiUrl = "http://127.0.0.1:5000/get-feedback";
 
 async function getFeedback() {
     showFeedbackSection();
